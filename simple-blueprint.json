@@ -1,0 +1,21 @@
+{
+  "name": "SimpleSubutaiBlueprint",
+  "description": "Simple Subutai blueprint",
+  "nodes": [
+    {
+      "name": "backup-server",
+      "template": "ubuntu16",
+      "peer_group": "HTTP-GROUP",
+      "size": "TINY"
+    }
+  ],
+  "sshKey": "titan,   ",
+  "peerGroups": [
+    {
+      "name": "HTTP-GROUP",
+      "pricingPref": {
+        "maxPrice": "50"
+      }
+    }
+  ]
+}
