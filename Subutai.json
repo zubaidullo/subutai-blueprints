@@ -1,21 +1,88 @@
 {
-  "name": "SimpleSubutaiBlueprint",
-  "description": "Simple Subutai blueprint",
-  "nodes": [
+  "name": "${environmentName}",
+  "description": "Subutai Mattermost",
+  "containers": [
     {
-      "name": "backup-server",
-      "template": "ubuntu16",
-      "peer_group": "HTTP-GROUP",
-      "size": "TINY"
+      "hostname": "mysql",
+      "template": "mysql@280dcda67a67d071970ff838d0331c33c0c04710",
+      "peer-criteria": "mattermost",
+      "size": "${dbcontainertype}"
+    },
+    {
+      "hostname": "mattermost",
+      "template": "mattermost@280dcda67a67d071970ff838d0331c33c0c04710",
+      "peer-criteria": "mattermost",
+      "size": "${mattermostcontainertype}",
+      "port-mapping": [
+        {
+          "protocol": "tcp",
+          "domain": "${domain}",
+          "internal-port": "8065",
+          "external-port": "8090"
+        }
+      ]
     }
   ],
-  "sshKey": "titan,   ",
-  "peerGroups": [
+  "peer-criteria": [
     {
-      "name": "HTTP-GROUP",
-      "pricingPref": {
-        "maxPrice": "50"
-      }
+      "name": "mattermost",
+      "max-price": "50"
     }
-  ]
+  ],
+  "configuration": {
+    "source-url": "https://github.com/zubaidullo/subutai-blueprints/archive/master.zip",
+    "ansible-playbook": "main.yml",
+    "arguments": [
+      {
+        "key": "key1",
+        "value": "value1"
+      }
+    ],
+    "groups": [
+      {
+        "name": "db",
+        "hostnames": [
+          "mysql"
+        ]
+      },
+      {
+        "name": "mattermost",
+        "hostnames": [
+          "mattermost"
+        ]
+      }
+    ]
+  },
+  "user-variables": {
+    "dbcontainertype": {
+      "description": "Please choose container type: TINY, SMALL, MEDIUM, LARGE, HUGE",
+      "type": "enum",
+      "default": "SMALL",
+      "validation": "TINY,SMALL,MEDIUM,LARGE,HUGE"
+    },
+    "mattermostcontainertype": {
+      "description": "You can set TINY,SMALL,MEDIUM,LARGE,HUGE",
+      "type": "enum",
+      "default": "SMALL",
+      "validation": "TINY,SMALL,MEDIUM,LARGE,HUGE"
+    },
+    "maxPrice": {
+      "description": "Enter the max price",
+      "type": "int",
+      "default": "50",
+      "validation": "\\d+"
+    },
+    "domain": {
+      "description": "Enter your domain name",
+      "type": "string",
+      "default": "mattermost.envs.subutai.cloud",
+      "validation": "[a-zA-Z0-9.-]+"
+    },
+    "environmentName": {
+      "description": "Enter your environment name",
+      "type": "string",
+      "default": "mattermost env",
+      "validation": "[a-zA-Z0-9]+"
+    }
+  }
 }
