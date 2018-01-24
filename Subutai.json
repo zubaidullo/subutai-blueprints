@@ -4,13 +4,13 @@
   "containers": [
     {
       "hostname": "mysql",
-      "template": "mysql@280dcda67a67d071970ff838d0331c33c0c04710",
+      "template": "master",
       "peer-criteria": "mattermost",
       "size": "${dbcontainertype}"
     },
     {
       "hostname": "mattermost",
-      "template": "mattermost@280dcda67a67d071970ff838d0331c33c0c04710",
+      "template": "master",
       "peer-criteria": "mattermost",
       "size": "${mattermostcontainertype}",
       "port-mapping": [
