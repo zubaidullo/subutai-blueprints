@@ -16,7 +16,6 @@
       "port-mapping": [
         {
           "protocol": "tcp",
-          "domain": "${domain}",
           "internal-port": "8065",
           "external-port": "8090"
         }
