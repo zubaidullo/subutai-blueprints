@@ -15,10 +15,10 @@
       "size": "${mattermostcontainertype}",
       "port-mapping": [
         {
-          "protocol": "tcp",
+          "protocol": "https",
           "domain": "${domain}",
           "internal-port": "8065",
-          "external-port": "8090"
+          "external-port": "443"
         }
       ]
     }
