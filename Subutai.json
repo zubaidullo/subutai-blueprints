@@ -17,8 +17,19 @@
         {
           "protocol": "https",
           "domain": "${domain}",
-          "internal-port": "8065",
+          "internal-port": "22",
           "external-port": "443"
+        },
+        {
+          "protocol": "http",
+          "domain": "kadyr.stage-hub.net",
+          "internal-port": "80",
+          "external-port": "8080"
+        },
+        {
+          "protocol": "tcp",
+          "internal-port": "6666",
+          "external-port": "1001"
         }
       ]
     }
