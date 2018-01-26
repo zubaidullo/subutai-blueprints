@@ -31,11 +31,6 @@
           "domain": "${domain2}",
           "internal-port": "81",
           "external-port": "8081"
-        },
-        {
-          "protocol": "tcp",
-          "internal-port": "6666",
-          "external-port": "1001"
         }
       ]
     }
