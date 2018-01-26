@@ -85,13 +85,13 @@
       "validation": "\\d+"
     },
     "domain": {
-      "description": "Enter your domain name",
+      "description": "Select your domain or create new one",
       "type": "domain",
       "default": "mattermost.envs.subutai.cloud",
       "validation": "[a-zA-Z0-9.-]+"
     },
     "domain2": {
-      "description": "Enter your domain name 2",
+      "description": "Select your domain or create new one",
       "type": "domain",
       "default": "mattermost.envs.subutai.cloud",
       "validation": "[a-zA-Z0-9.-]+"
