@@ -27,6 +27,12 @@
           "external-port": "8080"
         },
         {
+          "protocol": "http",
+          "domain": "${domain2}",
+          "internal-port": "81",
+          "external-port": "8081"
+        },
+        {
           "protocol": "tcp",
           "internal-port": "6666",
           "external-port": "1001"
@@ -85,6 +91,12 @@
     },
     "domain": {
       "description": "Enter your domain name",
+      "type": "domain",
+      "default": "mattermost.envs.subutai.cloud",
+      "validation": "[a-zA-Z0-9.-]+"
+    },
+    "domain2": {
+      "description": "Enter your domain name 2",
       "type": "domain",
       "default": "mattermost.envs.subutai.cloud",
       "validation": "[a-zA-Z0-9.-]+"
