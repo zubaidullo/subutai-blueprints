@@ -22,12 +22,6 @@
         },
         {
           "protocol": "http",
-          "domain": "kadyr.stage-hub.net",
-          "internal-port": "80",
-          "external-port": "8080"
-        },
-        {
-          "protocol": "http",
           "domain": "${domain2}",
           "internal-port": "81",
           "external-port": "8081"
