@@ -1,6 +1,8 @@
 {
   "name": "${environmentName}",
-  "description": "Subutai Mattermost",
+  "description": "Subutai test blueprint with port-mappings",
+  "version": "1.0.1",
+  "author": "Zubaidullo",
   "containers": [
     {
       "hostname": "mysql",
@@ -15,7 +17,7 @@
       "size": "${mattermostcontainertype}",
       "port-mapping": [
         {
-          "protocol": "https",
+          "protocol": "http",
           "domain": "${domain}",
           "internal-port": "22",
           "external-port": "443"
