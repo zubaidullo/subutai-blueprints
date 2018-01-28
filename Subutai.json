@@ -5,15 +5,15 @@
   "author": "Zubaidullo",
   "containers": [
     {
-      "hostname": "mysql",
+      "hostname": "${test0}",
       "template": "master",
-      "peer-criteria": "mattermost",
+      "peer-criteria": "peer-test",
       "size": "${dbcontainertype}"
     },
     {
-      "hostname": "mattermost",
+      "hostname": "${test1}",
       "template": "master",
-      "peer-criteria": "mattermost",
+      "peer-criteria": "peer-test",
       "size": "${mattermostcontainertype}",
       "port-mapping": [
         {
@@ -33,7 +33,7 @@
   ],
   "peer-criteria": [
     {
-      "name": "mattermost",
+      "name": "peer-test",
       "max-price": "50"
     }
   ],
@@ -50,13 +50,13 @@
       {
         "name": "db",
         "hostnames": [
-          "mysql"
+          "${test0}"
         ]
       },
       {
         "name": "mattermost",
         "hostnames": [
-          "mattermost"
+          "${test1}"
         ]
       }
     ]
