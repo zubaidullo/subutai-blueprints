@@ -1,7 +1,7 @@
 {
   "name": "${environmentName}",
   "description": "Subutai test blueprint with port-mappings",
-  "version": "1.0.1",
+  "version": "2.0.1",
   "author": "Zubaidullo",
   "containers": [
     {
