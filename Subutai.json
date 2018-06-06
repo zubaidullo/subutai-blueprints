@@ -26,7 +26,7 @@
     }
   ],
   "ansible-configuration": {
-    "source-url": "https://github.com/samsonbek/helloworld-bp/archive/master.zip",
+    "source-url": "https://github.com/zubaidullo/subutai-blueprints/archive/master.zip",
     "ansible-playbook": "main.yaml",
     "extra-vars": [
       {
