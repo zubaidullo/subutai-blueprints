@@ -1,1 +1,1 @@
-# mattermost
+# Simple Blueprint
