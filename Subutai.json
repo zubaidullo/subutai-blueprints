@@ -27,7 +27,7 @@
   ],
   "ansible-configuration": {
     "source-url": "https://github.com/zubaidullo/subutai-blueprints/archive/master.zip",
-    "ansible-playbook": "main.yaml",
+    "ansible-playbook": "main.yml",
     "extra-vars": [
       {
         "key": "key2",
