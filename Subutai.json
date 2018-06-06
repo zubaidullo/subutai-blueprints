@@ -1,11 +1,11 @@
 {
   "name": "${envName}",
-  "description": "example static website",
+  "description": "Simple Subutai blueprint",
   "version": "2.0.0",
-  "author": "github.com/samsonbek",
+  "author": "github.com/zubaidullo",
   "containers":[
     {
-      "hostname":"web-apache",
+      "hostname":"subutai-container",
       "template":"debian-stretch",
       "peer-criteria":"free peers",
       "size":"TINY",
@@ -31,7 +31,7 @@
     "extra-vars": [
       {
         "key": "htmlFileName",
-        "value": "${filename}"
+        "value": "about.html"
       },
       {
         "key": "htmlContent",
@@ -41,7 +41,7 @@
     "groups": [
       {
         "name": "web-group",
-        "hostnames": [ "web-apache" ]
+        "hostnames": [ "subutai-container" ]
       }
     ]
   },
@@ -50,7 +50,7 @@
     "envName": {
       "description": "Enter environment name, must container only letters",
       "type": "string",
-      "default": "HelloWWWorld",
+      "default": "test",
       "validation": "[a-zA-Z]+"
     },
     "domainName": {
@@ -58,12 +58,6 @@
       "type": "domain",
       "default": "",
       "validation": "[a-zA-Z0-9]+"
-    },
-    "filename": {
-      "description": "name of file in apache dir",
-      "type": "string",
-      "default": "about.html",
-      "validation": "[a-zA-Z0-9.]+"
     }
   }
 }
