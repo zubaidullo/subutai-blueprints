@@ -28,16 +28,6 @@
   "ansible-configuration": {
     "source-url": "https://github.com/zubaidullo/subutai-blueprints/archive/master.zip",
     "ansible-playbook": "main.yaml",
-    "extra-vars": [
-      {
-        "key": "htmlFileName",
-        "value": "about.html"
-      },
-      {
-        "key": "htmlContent",
-        "value": "test"
-      }
-    ],
     "groups": [
       {
         "name": "web-group",
